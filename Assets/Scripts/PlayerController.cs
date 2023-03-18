@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.InputSystem;
 
 // Credit to SamYam, August 13th, 2020.
 // https://youtu.be/YnwOoxtgZQI
@@ -14,11 +15,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Tilemap obstacleTilemap;
 
+    public Animator anim;
+    private Vector2 moveInput;
+
     private PlayerMovement controls;
+
     // Start is called before the first frame update
     void Awake()
     {
         controls = new PlayerMovement();
+        anim = GetComponent<Animator>();
     }
 
     private void OnEnable()
@@ -40,6 +46,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         controls.Main.Movement.performed += ctx => Move(ctx.ReadValue<Vector2>());
+        
+    }
+
+    private void FixedUpdate()
+    {
+        
     }
 
     private void Move(Vector2 direction)
@@ -54,13 +66,20 @@ public class PlayerController : MonoBehaviour
     {
         Vector3Int gridPosition = groundTilemap.WorldToCell(transform.position + (Vector3)direction);
 
-        if(!groundTilemap.HasTile(gridPosition) || obstacleTilemap.HasTile(gridPosition))
+        if (!groundTilemap.HasTile(gridPosition) || obstacleTilemap.HasTile(gridPosition))
         {
+
             return false;
         }
         else
         {
+            if (direction != Vector2.zero)
+            {
+                anim.SetFloat("MoveX", direction.x);
+                anim.SetFloat("MoveY", direction.y);
+            }
             return true;
         }
+
     }
 }
