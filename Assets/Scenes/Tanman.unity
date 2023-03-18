@@ -3758,6 +3758,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4395265072402988904, guid: 58bcd68db4244244a9acf29cd72982a7, type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 7264184526364373815, guid: 760f9bb8cef490b4aacfb3ef047ecefe, type: 3}
+    - target: {fileID: 4395265072402988904, guid: 58bcd68db4244244a9acf29cd72982a7, type: 3}
       propertyPath: groundTilemap
       value: 
       objectReference: {fileID: 1457649989317542268}
@@ -3765,6 +3769,10 @@ PrefabInstance:
       propertyPath: obstacleTilemap
       value: 
       objectReference: {fileID: 1457649989317542267}
+    - target: {fileID: 8187043967854372889, guid: 58bcd68db4244244a9acf29cd72982a7, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 8febd64c70c1fa3459e4de367b6aa7a9, type: 2}
     - target: {fileID: 8454501253344654577, guid: 58bcd68db4244244a9acf29cd72982a7, type: 3}
       propertyPath: m_Parameters.alignment
       value: 0
