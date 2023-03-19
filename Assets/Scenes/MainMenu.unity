@@ -729,7 +729,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1650675241}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< Updated upstream
   m_Script: {fileID: 11500000, guid: e01e80761941f0d4c9b6c9ea778c842c, type: 3}
+=======
+  m_Script: {fileID: 11500000, guid: 35e3d29fd05cae248b964f67854f924b, type: 3}
+>>>>>>> Stashed changes
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1800646894
@@ -1026,7 +1030,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+<<<<<<< Updated upstream
   m_Sprite: {fileID: 21300000, guid: b61686a7c9bf9d643b94c2624654c39f, type: 3}
+=======
+  m_Sprite: {fileID: 21300000, guid: d1f4d66d31bd1464790be3adb2a00ee5, type: 3}
+>>>>>>> Stashed changes
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
