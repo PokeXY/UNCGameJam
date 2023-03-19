@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Tilemap obstacleTilemap;
 
+    Vector2 lastDirection = Vector2.zero;
+    Vector2 direction = Vector2.zero;
+
     public Animator anim;
     private Vector2 moveInput;
 
@@ -46,7 +49,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         controls.Main.Movement.performed += ctx => Move(ctx.ReadValue<Vector2>());
-        
     }
 
     private void FixedUpdate()
@@ -66,17 +68,22 @@ public class PlayerController : MonoBehaviour
     {
         Vector3Int gridPosition = groundTilemap.WorldToCell(transform.position + (Vector3)direction);
 
-        if (!groundTilemap.HasTile(gridPosition) || obstacleTilemap.HasTile(gridPosition))
+
+
+        if (!groundTilemap.HasTile(gridPosition) || obstacleTilemap.HasTile(gridPosition) || lastDirection == direction)
         {
 
             return false;
+
         }
         else
         {
+
             if (direction != Vector2.zero)
             {
                 anim.SetFloat("MoveX", direction.x);
                 anim.SetFloat("MoveY", direction.y);
+                lastDirection = direction * -1;
             }
             return true;
         }
